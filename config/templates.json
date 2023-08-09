@@ -1,7 +1,7 @@
 [
     {
-        "templateId": "templateId1",
-        "templateLabel": "Template Id One",
+        "templateId": "newTemplateId1",
+        "templateLabel": "New Template Id One",
         "locales": [],
         "localesFolderName": "",
         "templateType": "Webstore"
