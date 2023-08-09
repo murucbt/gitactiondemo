@@ -6,8 +6,10 @@ on:
     paths:
       - config/templates.json
 jobs:
-  my-job:
+  sync-templates-in-s3:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Gonna sync templates.json to s3"
+      - name: Sync Templates to s3
+        run: |
+          aws s3 cp \
+            config/templates.json s3://${{ secrets.S3_CDN_DEPLOY_BUCKET_NAME }}/${{ github.event.repository.name }}/${{ needs.calculate-tag.outputs.tag }}/ \
